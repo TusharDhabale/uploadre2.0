@@ -60,7 +60,7 @@ OWNER_ID = 6155478725 # Replace with the actual owner's user ID
 SUDO_USERS = [5347709348]
 
 # ✅ Multiple AUTH CHANNELS allowed
-AUTH_CHANNELS = [-1003877954089,-1003903417561,-1003968357200]  # Add more channel IDs here
+AUTH_CHANNELS = [-1003968357200]  # Add more channel IDs here
 
 # Function to check if a user is authorized
 def is_authorized(user_id: int) -> bool:
@@ -136,7 +136,7 @@ random_image_url = random.choice(image_urls)
 caption = (
         "**ʜᴇʟʟᴏ👋**\n\n"
         "➠ **ɪ ᴀᴍ ᴛxᴛ ᴛᴏ ᴠɪᴅᴇᴏ ᴜᴘʟᴏᴀᴅᴇʀ ʙᴏᴛ.**\n"
-        "➠ **ғᴏʀ ᴜsᴇ ᴍᴇ sᴇɴᴅ /HKOWNER0 \n"
+        "➠ **ғᴏʀ ᴜsᴇ ᴍᴇ sᴇɴᴅ /HKOWNER \n"
         "➠ **ғᴏʀ ɢᴜɪᴅᴇ sᴇɴᴅ /help."
 )
     
@@ -429,7 +429,7 @@ async def help_command(client: Client, msg: Message):
     await msg.reply_text(help_text)
 
 # Upload command handler
-@bot.on_message(filters.command(["HKOWNER0"]))
+@bot.on_message(filters.command(["HKOWNER"]))
 async def upload(bot: Client, m: Message):
     if not is_authorized(m.chat.id):
         await m.reply_text("**🚫You are not authorized to use this bot.**")
